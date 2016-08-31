@@ -850,8 +850,8 @@ class TypedChoiceField(ChoiceField):
             )
         return value
 
-    def clean(self, value):
-        value = super(TypedChoiceField, self).clean(value)
+    def to_python(self, value):
+        value = super(TypedChoiceField, self).to_python(value)
         return self._coerce(value)
 
 
